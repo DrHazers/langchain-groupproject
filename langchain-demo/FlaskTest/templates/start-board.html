@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="height-full" data-a11y-animated-images="system" data-a11y-link-underlines="true">
+<head>
+  <meta charset="utf-8">
+  <link media="all" rel="stylesheet" href="../static/start-primer.css" />
+  <link media="all" rel="stylesheet" href="../static/start-site.css" />
+  <link media="all" rel="stylesheet" href="../static/start-style.css" />
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .title {
+      color: #ffffff;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+      display: flex;
+      font-size: 70px;
+      -webkit-box-reflect: below 1px -webkit-linear-gradient(transparent,rgba(0,0,0,0.2));
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 76px;
+      outline:none;
+      --c:lightseagreen;
+      text-shadow: 0 0 10px var(--c),0 0 20px var(--c),0 0 40px var(--c),0 0 80px var(--c),0 0 160px var(--c);
+      /*animation:animate 5s linear infinite;*/
+    }
+    .tip {
+      color: #7d7f81;
+      margin-top: 50px;
+      font-size: 25px;
+      animation: blink 5s infinite;
+    }
+    @keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+  </style>
+</head>
+<body class="height-full d-flex" style="word-wrap: break-word;">
+  <div id="main-content" class="js-warp-hide bg-gray-dark-mktg d-flex flex-auto flex-column overflow-hidden position-relative container">
+    <h1 class="title">Solor System Chat-Bot</h1>
+    <h2 class="tip"><- Click To Continue -></h2>
+    <div class="signup-space">
+      <div class="signup-stars"></div>
+      <div class="signup-stars"></div>
+      <div class="signup-stars"></div>
+      <div class="signup-stars"></div>
+      <div class="signup-stars"></div>
+      <div class="signup-stars"></div>
+    </div>
+    <img src="../static/material/hero-glow.svg" alt="Glowing universe"
+         class="js-warp-hide position-absolute overflow-hidden events-none"
+         style="top: 50%; left: 50%; width: 200%; transform: translate(-50%, -50%);">
+  </div>
+  <script>
+    document.getElementById('main-content').addEventListener('click', function() {
+            document.body.style.transform = 'translateY(-100%)';
+            setTimeout(function() {
+                window.location.href = "/index";
+            }); // Wait for the transition to complete before navigating
+    });
+  </script>
+</body>
+</html>

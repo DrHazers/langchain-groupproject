@@ -1,0 +1,278 @@
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    /*background-image: url("material/background.png");*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* 背景部分 */
+#element-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 主体部分 */
+.chat-app {
+    display: flex;
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    border-radius: 8px;
+    box-shadow: 70px 70px 180px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+/* 边栏部分 */
+.chat-sidebar {
+    width: 25%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    color: #ffffff;
+    height: 7%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 5;
+    font-size: 14px;
+    border-bottom: 1px solid #000000;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.record {
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 15px;
+    color: #ffffff;
+}
+
+.record:hover {
+    filter: brightness(120%);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.delete-btn:hover .delete-icon {
+    opacity: 0.5;
+}
+
+.sidebar-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    height: 7%;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid #000000;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.new-chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    height: 80%;
+    width: 100%;
+}
+
+.new-chat:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+/* 聊天部分 */
+.chat-container {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.chat-header {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 10px;
+    height: 30px;
+    line-height: 20px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 15px; /* 滚动条的宽度 */
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2); /* 滚动条轨道的颜色 */
+    border-radius: 10px; /* 滚动条滑块的圆角 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #888; /* 滚动条滑块的颜色 */
+    border-radius: 10px; /* 滚动条滑块的圆角 */
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 滚动条滑块在悬停时的颜色 */
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 75%;
+    word-wrap: break-word;
+    display: inline-block;
+    flex-direction: column;
+    clear: both;
+}
+
+.message.received {
+    float: left;
+    max-width: 75%;
+    word-wrap: break-word;
+    align-self: flex-start;
+    background: #f9f9f9;
+    text-align: left;
+}
+
+.message.sent {
+    float: right;
+    max-width: 75%;
+    word-wrap: break-word;
+    align-self: flex-end;
+    background: #3a4684;
+    color: #fff;
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+    position: relative;
+    padding: 20px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.chat-input textarea {
+    background: rgba(50, 61, 115, 0.9);
+    color: white;
+    flex: 1;
+    border-radius: 45px;
+    border-color: rgba(255, 255, 255, 0);
+    height: 45px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    resize: none;
+    margin-right: 15px;
+    line-height: 1.5;
+    justify-content: center;
+    align-self: flex-start;
+    outline: none;
+    font-size: 15px;
+}
+
+#message-input {
+    flex: 1;
+    width: calc(100% - 50px);
+    border: none;
+    resize: none;
+    overflow-y: auto;
+    max-height: 300px;
+    min-height: 0;
+}
+
+#message-input::placeholder {
+    color: #d7d1d1;
+}
+
+#message-input::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari 和 Opera */
+}
+
+/* 光标字符显示*/
+.typing::after {
+  content: '▌';
+}
+/* 光标闪烁动画*/
+.blinker::after {
+  animation: blinker 1s step-end infinite;
+}
+@keyframes blinker {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+#send-btn {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    color: black;
+    filter: brightness(100%);
+}
+
+#send-btn:hover {
+    filter: brightness(120%);
+}
